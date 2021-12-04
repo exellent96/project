@@ -60,7 +60,7 @@ cat <<EOF > /etc/trojan-go/config.json
   },
   "websocket": {
     "enabled": true,
-    "path": "/tr-go",
+    "path": "/trojanGo",
     "host": "$domain"
   }
 }
