@@ -23,7 +23,7 @@ cat <<EOF > /etc/trojan-go/config.json
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
-    "local_port": 2055,
+    "local_port": 443,
     "remote_addr": "127.0.0.1",
     "remote_port": 81,
     "log_level": 1,
@@ -50,7 +50,7 @@ cat <<EOF > /etc/trojan-go/config.json
     "reuse_session": true,
     "plain_http_response": "",
     "fallback_addr": "127.0.0.1",
-    "fallback_port": 2055,
+    "fallback_port": 443,
     "fingerprint": ""
   },
   "tcp": {
@@ -87,8 +87,8 @@ EOF
 cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
 EOF
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2055 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2055 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables-save >/etc/iptables.rules.v4
 netfilter-persistent save
 netfilter-persistent reload
