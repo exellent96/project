@@ -18,6 +18,8 @@ mkdir -p /etc/trojan-go/
 chmod 777 /etc/trojan-go/
 touch /etc/trojan-go/trojan-go.pid
 wget -O /etc/trojan-go/trojan-go https://raw.githubusercontent.com/exellent96/project/main/prem/tr-go/trojan-go
+wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/exellent96/project/main/prem/tr-go/geoip.dat
+wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/exellent96/project/main/prem/tr-go/geosite.dat
 chmod +x /etc/trojan-go/trojan-go
 cat <<EOF > /etc/trojan-go/config.json
 {
